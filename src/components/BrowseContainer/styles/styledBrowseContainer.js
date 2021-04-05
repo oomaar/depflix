@@ -14,6 +14,10 @@ export const Banner = styled.div`
     left: 3%;
     padding: 20px;
     max-width: 800px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 export const MovieTitle = styled.div`
@@ -32,6 +36,10 @@ export const MovieInfo = styled.div`
 
 export const Buttons = styled.div`
     display: flex;
+    
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `;
 
 export const ButtonIcon = styled.img`
@@ -98,6 +106,7 @@ export const InfoButton = styled.div`
 
     @media (max-width: 700px) {
         height: 45px;
+        margin-top: 20px;
     }
 `;
 

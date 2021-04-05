@@ -24,10 +24,14 @@ export const SubContainer = styled.div`
     &.invertSubContainer {
         flex-direction: row-reverse;
     }
+
+    @media (max-width: 600px) {
+        padding: 8px;
+    }
 `;
 
 export const Netflix = styled.img`
-    width: clamp(80px, 10vw, 120px);
+    width: clamp(50px, 10vw, 120px);
     cursor: pointer;
 `;
 
@@ -58,6 +62,10 @@ export const BurgerIcon = styled.img`
     filter: invert(1);
     width: 30px;
     margin-right: 10px;
+
+    @media (max-width: 600px) {
+        width: 15px;
+    }
 `;
 
 export const BurgerContainer  = styled.div`
@@ -85,6 +93,10 @@ export const Link = styled.button`
     border: none;
     cursor: pointer;
     font-weight: ${({ activate }) => (activate === 'true' ? '700' : 'normal')};
+
+    @media (max-width: 600px) {
+        font-size: 0.5rem;
+    }
 `;
 
 export const LinkHold = styled.div`
@@ -155,8 +167,6 @@ export const UserContainer = styled.div`
 `;
 
 export const DropLinks = styled.div`
-    /* border: 2px solid red; */
-
     &.above {
         border-bottom: 2px solid white;
     }
@@ -187,6 +197,10 @@ export const ChevronDown = styled.img`
     transform: rotate(90deg);
     filter: invert(1);
     width: 15px;
+
+    @media (max-width: 600px) {
+        width: 10px;
+    }
 `;
 
 export const GroupContainer = styled.div`
@@ -201,6 +215,10 @@ export const Icon = styled.img`
     width: 25px;
     margin: 0 2px;
     cursor: pointer;
+
+    @media (max-width: 600px) {
+        width: 10px;
+    }
 `;
 
 export const SearchContainer = styled.div`
@@ -214,7 +232,6 @@ export const SearchInput = styled.input`
     border: 2px solid white;
     outline: none;
     color: #808080;
-    padding: 8px;
     height: 30px;
     background: rgba(0, 0, 0, 0.7);
     transition: width 0.5s;
@@ -223,6 +240,12 @@ export const SearchInput = styled.input`
     opacity: ${({ active }) => (active === true ? '1' : '0')};
     width: ${({ active }) => (active === true ? '200px' : '0px')};
     /* Bracket Hell */
+
+    @media (max-width: 600px) {
+        height: 18px;
+        font-size: 0.5rem;
+        margin: 0;
+    }
 `;
 
 export const SearchIcon = styled.button`

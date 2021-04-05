@@ -54,7 +54,8 @@ const BrowseContainer = ({ slides }) => {
         <Container>
             {loading ? (
                 <Loading src={user.photoURL} />
-            ) : <Loading.ReleaseBody />}
+            ) : <Loading.ReleaseBody />
+            }
             <Background className="browseContainer__background">
                 <Navbar
                     searchTerm={searchTerm}
@@ -154,8 +155,8 @@ const BrowseContainer = ({ slides }) => {
             </BrowseFooter>
         </Container>
     ) : (
-            <Profiles user={user} setProfile={setProfile} />
-        )
+        <Profiles user={user} setProfile={setProfile} />
+    )
 };
 
 export default BrowseContainer;
