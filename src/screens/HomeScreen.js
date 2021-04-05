@@ -1,14 +1,14 @@
-import { Accordion, Footer, Header, StoryCard } from "../components";
+import { Accordion, Footer, Header, Storycard } from '../Components';
 
 const HomeScreen = () => {
     return (
         <>
             <Header />
-            <StoryCard />
+            <Storycard />
             <Accordion />
             <Footer />
         </>
-    );
+    )
 };
 
 export default HomeScreen;

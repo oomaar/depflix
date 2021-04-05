@@ -33,10 +33,6 @@ export const Rows = styled.div`
     &.rows__browsePage {
         margin: 0 0 20px 0;
     }
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-    }
 `;
 
 export const Row = styled.div`

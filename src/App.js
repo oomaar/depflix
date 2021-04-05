@@ -1,13 +1,44 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { HomeScreen, SigninScreen, SignupScreen, BrowseScreen } from "./screens";
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { HomeScreen, SigninScreen, SignupScreen, BrowseScreen } from './screens';
+import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
+import * as ROUTES from "./constants/routes";
+import { useAuthListener } from "./hooks";
 
-const App = () => {
+function App() {
+  // const user = {};
+  // const user = null;
+  // const user = { name: 'username' };
+  const { user } = useAuthListener();
+
   return (
     <Router>
-      <Route exact path="/" component={HomeScreen} />
-      <Route exact path="/signin" component={SigninScreen} />
-      <Route exact path="/signup" component={SignupScreen} />
-      <Route exact path="/browse" component={BrowseScreen} />
+      <Switch>
+        <IsUserRedirect
+          user={user}
+          loggedinpath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.HOME}>
+          <HomeScreen />
+        </IsUserRedirect>
+        <IsUserRedirect
+          user={user}
+          loggedinpath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.SIGNIN}>
+          <SigninScreen />
+        </IsUserRedirect>
+        <IsUserRedirect
+          user={user}
+          loggedinpath={ROUTES.BROWSE}
+          exact
+          path={ROUTES.SIGNUP}>
+          <SignupScreen />
+        </IsUserRedirect>
+        <ProtectedRoute user={user} exact path={ROUTES.BROWSE}>
+          <BrowseScreen />
+        </ProtectedRoute>
+      </Switch>
     </Router>
   );
 }
